@@ -27,7 +27,7 @@ const carts = (state = [], action) => {
                 ];
             }
         case actions.REMOVE_ITEM:
-            i = _.findIndex(state, ['itemId', action.itemId]);
+            i = findIndex(state, ['itemId', action.itemId]);
             if (i < 0) {
                 return state;
             } else {

@@ -12,11 +12,10 @@ const bookmarks = (state = [], action) => {
                     ...state,
                     {
                         itemId: action.itemId,
-                        itemName: action.itemName,
                     },
                 ];
             } else {
-                return state;
+                return [...state.slice(0, i), ...state.slice(i + 1)];
             }
         default:
             return state;
