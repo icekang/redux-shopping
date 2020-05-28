@@ -2,21 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
 
-const ItemList = ({ items, addItem }) => (
+const ItemList = ({ items, addItem, removeItem }) => (
     <ul>
         {items.map((item) => (
             <Item
                 key={item.itemId}
                 {...item}
-                onClick={() => {
+                addItem={() => {
                     addItem(item.itemId);
+                }}
+                removeItem={() => {
+                    removeItem(item.itemId);
                 }}
             />
         ))}
     </ul>
 );
 
-Item.propTypes = {
+ItemList.propTypes = {
     items: PropTypes.array.isRequired,
     addItem: PropTypes.func.isRequired,
 };

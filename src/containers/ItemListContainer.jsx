@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addItem } from '../actions';
+import { addItem, removeItem } from '../actions';
 import ItemList from '../components/ItemList';
 
 const mapStateToProps = (state) => ({
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     addItem: (itemId) => dispatch(addItem(itemId)),
+    removeItem: (itemId) => dispatch(removeItem(itemId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemList);

@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Item = ({ onClick, itemName }) => (
-    <div onClick={onClick}>
-        <h1>{itemName}</h1>
+const Item = ({ itemName, addItem, removeItem }) => (
+    <div style={{ margin: '10px 10px' }}>
+        <span>
+            <button onClick={removeItem}>-</button>
+            <label>{itemName}</label>
+            <button onClick={addItem}>+</button>
+        </span>
     </div>
 );
 Item.propTypes = {
-    text: PropTypes.string.isRequired,
-    onCLick: PropTypes.func.isRequired,
+    itemName: PropTypes.string.isRequired,
+    addItem: PropTypes.func.isRequired,
+    removeItem: PropTypes.func.isRequired,
 };
 
 export default Item;
