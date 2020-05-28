@@ -1,9 +1,8 @@
 const actions = require('./actionTypes');
 
-export const addItem = (itemId, itemName) => ({
+export const addItem = (itemId) => ({
     type: actions.ADD_ITEM,
     itemId,
-    itemName,
 });
 
 export const removeItem = (itemId) => ({
@@ -11,8 +10,7 @@ export const removeItem = (itemId) => ({
     itemId,
 });
 
-export const addBookmark = (itemId, itemName) => ({
-    type: actions.ADD_BOOKMARK,
+export const toggleBookmark = (itemId) => ({
+    type: actions.TOGGLE_BOOKMARK,
     itemId,
-    itemName,
 });
