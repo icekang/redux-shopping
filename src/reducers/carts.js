@@ -1,5 +1,5 @@
 import actions from '../actions/actionTypes';
-import _ from 'lodash';
+import { findIndex } from 'lodash';
 import { produce } from 'immer';
 // const actions = require('../actions/actionTypes');
 
@@ -7,7 +7,7 @@ const carts = (state = [], action) => {
     let i;
     switch (action.type) {
         case actions.ADD_ITEM:
-            i = _.findIndex(state, ['itemId', action.itemId]);
+            i = findIndex(state, ['itemId', action.itemId]);
             if (i < 0) {
                 return [
                     ...state,
